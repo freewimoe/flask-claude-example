@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Claude Example - Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Willkommen auf meinem Blog</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Anmelden</a>
+            <a href="register.html">Registrieren</a>
+            <a href="create_post.html">Post erstellen</a>
+            <a href="upload_file.html">Datei hochladen</a>
+        </nav>
+    </header>
+    <main>
+        <div class="demo-notice">
+            <strong>📌 Demo-Modus:</strong> Diese Seite zeigt die Benutzeroberfläche der Flask Claude Example Anwendung. 
+            Für die vollständige Funktionalität mit Datenbank und Server-Features, 
+            <a href="https://github.com/freewimoe/flask-claude-example" target="_blank">klone das Repository</a> 
+            und folge den Installationsanweisungen.
+        </div>
+        
+        <h2>Letzte Posts</h2>
+        <article>
+            <h3>Willkommen bei Flask Claude Example!</h3>
+            <p>Diese Demo-Anwendung zeigt die Integration von Flask mit modernen Web-Technologien. 
+            Hier können Benutzer sich registrieren, einloggen, Blog-Posts erstellen und Dateien hochladen.</p>
+            <small>Erstellt am 2024-01-15</small>
+        </article>
+        
+        <article>
+            <h3>Features der Anwendung</h3>
+            <p>✅ Benutzerauthentifizierung<br>
+            ✅ SQLite Datenbank mit SQLAlchemy<br>
+            ✅ File Upload Funktionalität<br>
+            ✅ CSRF-Schutz mit Flask-WTF<br>
+            ✅ Responsive Design<br>
+            ✅ API Endpoints für externe Integration</p>
+            <small>Erstellt am 2024-01-14</small>
+        </article>
+        
+        <article>
+            <h3>Technologie Stack</h3>
+            <p>Diese Anwendung nutzt Flask 2.3.3 als Backend-Framework, SQLite für die Datenpersistierung, 
+            und Flask-WTF für sichere Formulare. Das Frontend verwendet HTML5 und CSS3 für eine moderne Benutzeroberfläche.</p>
+            <small>Erstellt am 2024-01-13</small>
+        </article>
+
+        <div class="api-demo">
+            <h3>🔗 API Endpoints Demo</h3>
+            <p>Die Anwendung bietet folgende REST API Endpunkte:</p>
+            <ul>
+                <li><code>GET /api/posts</code> - Alle Posts abrufen</li>
+                <li><code>GET /api/user/&lt;id&gt;</code> - Benutzerinformationen abrufen</li>
+                <li><code>GET /api/weather?city=&lt;city&gt;</code> - Wetter-Demo API</li>
+                <li><code>GET /api/search?q=&lt;query&gt;</code> - Posts durchsuchen</li>
+                <li><code>POST /ask_claude</code> - LLM Integration (Demo)</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>
+            <strong>Vollständige Anwendung:</strong> 
+            <a href="https://github.com/freewimoe/flask-claude-example" target="_blank">GitHub Repository</a>
+            | MIT License | Erstellt mit GitHub Copilot
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post erstellen - Flask Claude Example Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Neuen Post erstellen</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Anmelden</a>
+            <a href="register.html">Registrieren</a>
+            <a href="upload_file.html">Datei hochladen</a>
+        </nav>
+    </header>
+    <main>
+        <div class="demo-notice">
+            <strong>📌 Demo-Modus:</strong> Diese Formulare sind nur zur Demonstration der Benutzeroberfläche. 
+            In der vollständigen Anwendung würden Posts in der SQLite-Datenbank gespeichert werden.
+        </div>
+        
+        <form method="POST" action="#" onsubmit="showDemo(event)">
+            <p>
+                <label for="title">Titel:</label>
+                <input type="text" id="title" name="title" size="50" required>
+            </p>
+            <p>
+                <label for="content">Inhalt:</label>
+                <textarea id="content" name="content" rows="10" cols="50" required></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Post erstellen">
+            </p>
+        </form>
+        
+        <div id="demo-message" style="display: none;" class="flashes">
+            <li class="success">Demo: Post würde in der vollständigen Anwendung erstellt und gespeichert werden!</li>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+            <h3>📝 Blog-System Features</h3>
+            <ul>
+                <li>✅ Titel und Inhalt für Posts</li>
+                <li>✅ Benutzer-zugewiesene Posts</li>
+                <li>✅ Zeitstempel für Erstellung</li>
+                <li>✅ Vollständige CRUD-Operationen</li>
+                <li>✅ Suchfunktion in Posts</li>
+                <li>✅ REST API für Post-Zugriff</li>
+            </ul>
+        </div>
+    </main>
+    
+    <script>
+        function showDemo(event) {
+            event.preventDefault();
+            document.getElementById('demo-message').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('demo-message').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmelden - Flask Claude Example Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Anmelden</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Registrieren</a>
+        </nav>
+    </header>
+    <main>
+        <div class="demo-notice">
+            <strong>📌 Demo-Modus:</strong> Diese Formulare sind nur zur Demonstration der Benutzeroberfläche. 
+            In der vollständigen Anwendung würden diese mit der Flask-Backend-Logik verbunden sein.
+        </div>
+        
+        <form method="POST" action="#" onsubmit="showDemo(event)">
+            <p>
+                <label for="username">Benutzername:</label>
+                <input type="text" id="username" name="username" size="32" required>
+            </p>
+            <p>
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password" size="32" required>
+            </p>
+            <p>
+                <input type="submit" value="Anmelden">
+            </p>
+        </form>
+        
+        <div id="demo-message" style="display: none;" class="flashes">
+            <li class="success">Demo: Anmeldung würde in der vollständigen Anwendung verarbeitet werden!</li>
+        </div>
+        
+        <p style="margin-top: 20px;">
+            <strong>Noch kein Konto?</strong> <a href="register.html">Hier registrieren</a>
+        </p>
+    </main>
+    
+    <script>
+        function showDemo(event) {
+            event.preventDefault();
+            document.getElementById('demo-message').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('demo-message').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
