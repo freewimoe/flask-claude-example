@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datei hochladen - Flask Claude Example Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Datei hochladen</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Anmelden</a>
+            <a href="register.html">Registrieren</a>
+            <a href="create_post.html">Post erstellen</a>
+        </nav>
+    </header>
+    <main>
+        <div class="demo-notice">
+            <strong>📌 Demo-Modus:</strong> Das File-Upload-System ist nur zur Demonstration der Benutzeroberfläche. 
+            In der vollständigen Anwendung würden Dateien sicher in den uploads/ Ordner gespeichert werden.
+        </div>
+        
+        <form method="POST" action="#" enctype="multipart/form-data" onsubmit="showDemo(event)">
+            <p>
+                <label for="file">Datei auswählen:</label>
+                <input type="file" id="file" name="file" accept=".jpg,.jpeg,.png,.pdf,.txt" required>
+            </p>
+            <p>
+                <small>Erlaubte Dateiformate: JPG, PNG, PDF, TXT</small>
+            </p>
+            <p>
+                <input type="submit" value="Datei hochladen">
+            </p>
+        </form>
+        
+        <div id="demo-message" style="display: none;" class="flashes">
+            <li class="success">Demo: Datei würde in der vollständigen Anwendung hochgeladen und gespeichert werden!</li>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+            <h3>📁 File Upload Features</h3>
+            <ul>
+                <li>✅ Sichere Dateinamen mit <code>secure_filename()</code></li>
+                <li>✅ Validierung der Dateiformate</li>
+                <li>✅ Größenbeschränkungen</li>
+                <li>✅ Upload-Ordner wird automatisch erstellt</li>
+                <li>✅ CSRF-Schutz für Formulare</li>
+                <li>✅ Flask-WTF Integration</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 20px; background: #fff3cd; border-radius: 5px; border-left: 4px solid #ffc107;">
+            <h4>🔒 Sicherheitsfeatures</h4>
+            <p>Die vollständige Anwendung implementiert wichtige Sicherheitsmaßnahmen:</p>
+            <ul>
+                <li>Werkzeug Security für Passwort-Hashing</li>
+                <li>Flask-WTF CSRF-Protection</li>
+                <li>Sichere Session-Verwaltung</li>
+                <li>File Upload Validierung</li>
+            </ul>
+        </div>
+    </main>
+    
+    <script>
+        function showDemo(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('file');
+            const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'keine Datei ausgewählt';
+            document.getElementById('demo-message').innerHTML = 
+                `<li class="success">Demo: Datei "${fileName}" würde in der vollständigen Anwendung hochgeladen werden!</li>`;
+            document.getElementById('demo-message').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('demo-message').style.display = 'none';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

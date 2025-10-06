@@ -88,6 +88,36 @@ Zum Entwickeln mit Debug-Modus:
 python -m flask --app flask_claude_example.py run --debug
 ```
 
+## Deployment
+
+### GitHub Pages Demo
+
+Eine statische Demo der Benutzeroberfläche ist auf GitHub Pages verfügbar:
+
+**🌐 [Live Demo auf GitHub Pages](https://freewimoe.github.io/flask-claude-example/)**
+
+Die Demo zeigt:
+- ✅ Alle Benutzeroberflächen (Home, Login, Registrierung, Post-Erstellung, File-Upload)
+- ✅ Responsive Design und CSS-Styling
+- ✅ Interaktive Formulare (ohne Backend-Funktionalität)
+- ✅ Übersicht aller Features und API-Endpunkte
+
+> **Hinweis**: Die GitHub Pages Demo ist nur eine statische Vorschau der Benutzeroberfläche. Für die vollständige Funktionalität mit Datenbank, Authentifizierung und Server-Features, folge den lokalen Installationsanweisungen oben.
+
+### Produktions-Deployment
+
+Für ein vollständiges Deployment mit Backend-Funktionalität empfehlen wir:
+
+- **[Heroku](https://heroku.com)** - Einfaches Python-Hosting
+- **[Railway](https://railway.app)** - Moderne Cloud-Plattform
+- **[DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)** - Container-basiertes Hosting
+- **[Render](https://render.com)** - Kostenloses Python-Hosting
+
+Für die meisten Plattformen benötigst du zusätzlich eine `Procfile`:
+```
+web: python -m flask --app flask_claude_example.py run --host=0.0.0.0 --port=$PORT
+```
+
 ## Lizenz
 
 MIT License - siehe LICENSE Datei für Details.

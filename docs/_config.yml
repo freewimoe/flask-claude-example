@@ -1,0 +1,26 @@
+# GitHub Pages configuration
+# Serve from the docs/ directory
+
+# Set the theme (optional)
+# theme: minima
+
+# Custom domain (if needed)
+# url: "https://freewimoe.github.io"
+# baseurl: "/flask-claude-example"
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+
+# Enable relative links to work
+relative_links:
+  enabled: true
+  collections: true
+
+# Include files
+include:
+  - README.md
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
